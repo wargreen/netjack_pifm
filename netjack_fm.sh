@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## TODO : wait for netjack master to launch the pipe
+## 
 
 #### Dependencies : ####
 ## piFmRds [https://github.com/ChristopheJacquet/PiFmRds]
@@ -20,12 +20,13 @@
 
 ## Define all parameters
 #Audio fromat of your net master instance
-RATE=44100
+#RATE=44100 # Now grabbed from netjack
 
 #Radio parameters
 FREQ=107.7
 PS="INIT" #8 char max
 RT="Netjack-PiFm on $HOSTNAME Up&Workin" #64 char max
+NC_RDS_PORT=16123
 
 #PiFmRds path :
 PIFM=/home/pi/PiFmRds/src/pi_fm_rds
@@ -50,7 +51,7 @@ init()
 {
 	trap 'cleanup; exit 0' SIGINT SIGTERM
 	mkfifo /tmp/rds_ctl
-	nc -l -p 16123 > /tmp/rds_ctl &
+	nc -l -p $NC_RDS_PORT > /tmp/rds_ctl &
 	NC_PID=$!
 	#jackd -d net -l 2 2> /dev/null; echo "Jackd PID: "$! | tee -a ~/.log/jack/jackpifm.log | grep --line-buffered "Master name :" | while read line; do
 	

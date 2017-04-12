@@ -6,7 +6,7 @@ It allow to automate jack, sox & pifmrds lauch when a netajck master is found. S
 For educational purpose only, sure. Do NO hack radio frequencies, okay ? It's bad. Very bad.
 
 # Dependencies :
-* piFmRds [https://github.com/ChristopheJacquet/PiFmRds]
+* piFmRds [https://github.com/ChristopheJacquet/PiFmRds] under GPLv3. I've inclued here the binary for easy deployement.
 * netcat
 * jackd2
 * jack_stdout

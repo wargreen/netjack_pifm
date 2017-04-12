@@ -1,0 +1,11 @@
+[Unit]
+Description=Netjack-PiFMrds
+After=network.target
+
+
+[Service]
+ExecStart=/usr/local/bin/netjack_pifmrds
+
+
+[Install]
+WantedBy=multi-user.target

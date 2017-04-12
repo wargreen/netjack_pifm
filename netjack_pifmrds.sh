@@ -81,6 +81,7 @@ run()
 		echo $RATE
 		sleep 1
 		jack-stdout -q system:capture_1 system:capture_2 | sox -r $RATE -b 16 -c 2 -e signed -t raw - -t wav - | $PIFM -freq $FREQ -rt "$RT" -ps "$PS" -ctl /tmp/rds_ctl -audio -
+		killall jackd
 	done
 
 }

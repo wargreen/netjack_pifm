@@ -2,6 +2,7 @@
 TL;DR; script to route netjack audio to PiFmRds
 
 It allow to automate jack, sox & pifmrds lauch when a netajck master is found. So you can just lauch the script (in few times, just boot your PI) and load a netjack master on the network to send your sond over air and play with RDS !
+
 For educational purpose only, sure. Do NO hack radio frequencies, okay ? It's bad. Very bad.
 
 # Dependencies :
@@ -17,6 +18,10 @@ On your PI :
 * git clone this repo
 * cd netjack_pifm
 * ./netajack_fm.sh
+OR
+* git clone this repo
+* cd netjack_pifm
+* sudo ./install.sh -i -d # This will be install this script, dependencies and enable the systemd service
 
 On your other computer :
 * Start your jack server (eg with $jack_control start)

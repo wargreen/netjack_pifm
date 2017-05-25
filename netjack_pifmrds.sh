@@ -73,7 +73,7 @@ run()
 {
 	echo "Starting jack"
 #	jackd -d net -l 2 2>/dev/null | tee -a ~/.log/jack/jackpifm.log | grep --line-buffered "Master name :" | while read line; do
-	jackd -d net -l 2 2>/dev/null | tee -a /var/log/jackpifm.log | grep --line-buffered "Sample rate : " | grep --line-buffered -o [[:digit:]]* | while read RATE; do
+	jackd -d net -l 4 -P 2 -C 0 2>/dev/null | tee -a /var/log/jackpifm.log | grep --line-buffered "Sample rate : " | grep --line-buffered -o [[:digit:]]* | while read RATE; do
 #		echo $line
 		#sleep 1
 		#jack_samplerate 2> /dev/null

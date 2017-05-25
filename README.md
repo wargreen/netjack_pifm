@@ -18,7 +18,9 @@ On your PI :
 * git clone this repo
 * cd netjack_pifm
 * ./netajack_fm.sh
+
 OR
+
 * git clone this repo
 * cd netjack_pifm
 * sudo ./install.sh -i -d # This will be install this script, dependencies and enable the systemd service
